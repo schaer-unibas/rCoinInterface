@@ -1,0 +1,10 @@
+Package: rCoinInterface
+Type: Package
+Title: Coinmarketcap Interface for R
+Version: 0.1.0
+Author: Fabian Schär
+Maintainer: Fabian Schär <f.schaer@unibas.ch>
+Description: Coinmarketcap interface for R
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
