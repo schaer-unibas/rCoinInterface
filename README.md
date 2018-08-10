@@ -20,7 +20,7 @@ install.packages("devtools")
 library(devtools)
 install_github("chainomics/rCoinInterface")
 install.packages("rCoinInterface")
-library("rCoinInterface")
+library(rCoinInterface)
 ```
 
 ## Functions
