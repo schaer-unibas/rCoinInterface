@@ -14,6 +14,6 @@ prepareCoinData(coinA, coinB, obs = "ALL", directory = getwd())
 \description{
 Computes correlation between two crypto assets.}
 \examples{
-coinCorr("BTC", "ETH", obs = "ALL")
-coinCorr("ETH", "ETC", obs = 100)
+coinCorr(BTC, ETH, obs = "ALL")
+coinCorr(ETH, ETC, obs = 100)
 }
