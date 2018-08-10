@@ -7,7 +7,7 @@ Version: 0.1.1
 Author: Fabian Schär
 Maintainer: Fabian Schär (f.schaer@unibas.ch)
 Description: Coinmarketcap interface for R
-import: jsonlite
+import: jsonlite, ggplot2
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

@@ -3,17 +3,20 @@
 ##############################
 coinPlot <- function(coin = BTC, data = "price"){
   if(data == "price"){
-    length(coin$price[,2])
-    ed <- c(as.numeric(format(Sys.time(), "%Y")), (as.numeric(format(Sys.time(), "%m")) * 30 + as.numeric(format(Sys.time(), "%d"))))
-      plot(ts(coin$price[,2],end = ed,frequency = 365),ylab="Price", xlab="Time", col="blue")
+    ggplot(
+      mapping = aes(
+        x = as.Date(as.POSIXct(as.numeric((eval(parse(text= eval(parse(text = "token"))))$price[,1])/1000),origin="1970-01-01",tz="GMT")),
+        y = eval(parse(text= eval(parse(text = "token"))))$price[,2])) + geom_line() + ylab("USD Price") + xlab("Time") + scale_y_continuous(position = "left")
   } else if(data == "volume"){
-    length(coin$volume[,2])
-    ed <- c(as.numeric(format(Sys.time(), "%Y")), (as.numeric(format(Sys.time(), "%m")) * 30 + as.numeric(format(Sys.time(), "%d"))))
-    plot(ts(coin$volume[,2],end = ed,frequency = 365),ylab="Volume", xlab="Time", col="blue", main = coin)
+    ggplot(
+      mapping = aes(
+        x = as.Date(as.POSIXct(as.numeric((eval(parse(text= eval(parse(text = "token"))))$volume[,1])/1000),origin="1970-01-01",tz="GMT")),
+        y = eval(parse(text= eval(parse(text = "token"))))$volume[,2]/1000000)) + geom_line() + ylab("Trade Volume in Mio. USD") + xlab("Time") + scale_y_continuous(position = "left")
   } else if(data == "market_cap"){
-    length(coin$market_cap[,2])
-    ed <- c(as.numeric(format(Sys.time(), "%Y")), (as.numeric(format(Sys.time(), "%m")) * 30 + as.numeric(format(Sys.time(), "%d"))))
-    plot(ts(coin$market_cap[,2],end = ed,frequency = 365),ylab="Market Cap", xlab="Time", col="blue", main = coin)
+    ggplot(
+      mapping = aes(
+        x = as.Date(as.POSIXct(as.numeric((eval(parse(text= eval(parse(text = "token"))))$market_cap[,1])/1000),origin="1970-01-01",tz="GMT")),
+        y = eval(parse(text= eval(parse(text = "token"))))$market_cap[,2]/1000000)) + geom_line() + ylab("Market Cap in Mio. USD") + xlab("Time") + scale_y_continuous(position = "left")
   } else {
     print("Unknown plot parameter. Please use 'price', 'volume' or 'market_cap'.")
   }
