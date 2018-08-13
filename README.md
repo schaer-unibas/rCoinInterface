@@ -35,4 +35,4 @@ library(rCoinInterface)
 Although **getCoinData()** optionally allows to store data as .csv, the analysis functions **coinCorr()** and **coinPlot()** expect JSON format. Only use the CSV parameter if you plan to run your analysis in a spreadsheet application with CSV support.
 
 ## Citation
-Fabian Schär (2018), rCoinInterface (R Package), https://github.com/Chainomics/rCoinInterface
+Fabian Schär (2018), rCoinInterface: Coinmarketcap Interface for R (R Package), https://github.com/Chainomics/rCoinInterface
