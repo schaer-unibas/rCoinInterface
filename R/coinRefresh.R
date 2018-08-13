@@ -1,8 +1,8 @@
 ##############################
-# Check and Refresh
+# Refresh Coin Data
 ##############################
 
-checkAndRefresh <- function(coin, store = TRUE){
+coinRefresh <- function(coin, store = TRUE){
   if(exists(coin) == FALSE){
     coinTemp <- fromJSON(paste("http://www.coincap.io/history/",coin,sep=""))
     if(store == TRUE){

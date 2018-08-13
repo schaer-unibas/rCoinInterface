@@ -2,7 +2,7 @@
 # Plot Coin Time Series
 ##############################
 coinPlot <- function(coin = "BTC", data = "price"){
-  checkAndRefresh(coin)
+  coinRefresh(coin)
   if(data == "price"){
     ggplot(
       mapping = aes(
@@ -17,7 +17,7 @@ coinPlot <- function(coin = "BTC", data = "price"){
     ggplot(
       mapping = aes(
         x = as.Date(as.POSIXct(as.numeric(( eval(parse(text= eval(parse(text = "coin"))))$price[,1])/1000),origin="1970-01-01",tz="GMT")),
-        y = eval(parse(text= eval(parse(text = "coin"))))$market_cap[,2]/1000000)) + geom_line() + ylab("Market Cap in Mio. USD") + xlab("Time") + scale_y_continuous(position = "left")
+        y = eval(parse(text= eval(parse(text = "coin"))))$market_cap[,2]/1000000000)) + geom_line() + ylab("Market Cap in Mia. USD") + xlab("Time") + scale_y_continuous(position = "left")
   } else {
     print("Unknown plot parameter. Please use 'price', 'volume' or 'market_cap'.")
   }
