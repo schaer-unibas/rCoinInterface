@@ -2,7 +2,7 @@
 # Refresh Coin Data
 ##############################
 
-coinRefresh <- function(coin, store = TRUE){
+coinRefresh <- function(coin = "BTC", store = TRUE){
   if(exists(coin) == FALSE){
     coinTemp <- fromJSON(paste("http://www.coincap.io/history/",coin,sep=""))
     if(store == TRUE){
