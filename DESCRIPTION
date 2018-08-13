@@ -1,11 +1,11 @@
 Package: rCoinInterface
 Type: Package
 Title: Coinmarketcap Interface for R
-Version: 0.1.1
+Version: 0.1.2
 Author: Fabian Schär
 Maintainer: Fabian Schär <f.schaer@unibas.ch>
 Description: Coinmarketcap interface for R
-import: jsonlite
+import: jsonlite, ggplot2
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
