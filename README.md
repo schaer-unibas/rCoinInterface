@@ -7,7 +7,8 @@ Version: 0.1.2
 Author: Fabian Schär
 Maintainer: Fabian Schär (f.schaer@unibas.ch)
 Description: Coinmarketcap interface for R
-import: jsonlite, ggplot2
+Year: 2018
+Import: jsonlite, ggplot2
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -32,3 +33,6 @@ library(rCoinInterface)
 
 ## Usage
 Although **getCoinData()** optionally allows to store data as .csv, the analysis functions **coinCorr()** and **coinPlot()** expect JSON format. Only use the CSV parameter if you plan to run your analysis in a spreadsheet application with CSV support.
+
+## Citation
+Fabian Schär (2018), rCoinInterface (R Package), https://github.com/Chainomics/rCoinInterface
