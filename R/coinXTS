@@ -1,0 +1,18 @@
+###########################################
+# Convert data to (extensible) Time Series
+##########################################
+
+coinXTS <- function(coin = "BTC"){
+
+  CoinVar<-eval(parse(text= eval(parse(text = "coin"))))
+  
+  date<-as.Date(as.POSIXct(CoinVar$price[,1]/1000,origin="1970-01-01",tz="GMT"))
+  value<-cbind(CoinVar$price[,2], CoinVar$market_cap[,2], CoinVar$volume[,2])
+      
+  require(xts)
+  XTSData <- xts(value, order.by=date)
+  attr(XTSData, 'frequency') <- 1
+
+  return(XTSData)
+
+}
